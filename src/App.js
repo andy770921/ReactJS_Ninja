@@ -12,16 +12,26 @@ class App extends Component {
   };
   addArrayElement = (newNinja) => {
     newNinja.id = this.state.ninjas.length + 1;
-    const newArray = [...this.state.ninjas, newNinja];
+    let newArray = [...this.state.ninjas, newNinja];
     this.setState(
       { ninjas : newArray }
     );
   };
+
+  deleteArrayElement = (id) => {
+    let deletedArray = this.state.ninjas.filter( element => {
+      return element.id !== id;
+    });
+    this.setState(
+      { ninjas : deletedArray }
+    );
+  };
+
   render() {
       return (
         <div className="App">
           <h1>hello</h1>
-          <Ninjas ninjasArray = { this.state.ninjas } />
+          <Ninjas deleteNinja = {this.deleteArrayElement} ninjasArray = { this.state.ninjas } />
           <AddNinja addArrayElement = {this.addArrayElement}/>
         </div>
       );

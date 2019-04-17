@@ -13,7 +13,8 @@ class AddNinja extends Component {
     };
     handleSubmit = (e) =>{
         e.preventDefault();
-        this.props.addArrayElement(this.state);
+        let newObj = Object.assign ({},this.state);
+        this.props.addArrayElement(newObj);
     };
 
     render(){

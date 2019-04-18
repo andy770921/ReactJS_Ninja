@@ -11,17 +11,12 @@ class App extends Component {
     ]
   };
   addArrayElement = (newNinja) => {
-    newNinja.id = Date.now();
-    //console.log(newNinja);
-    //newNinja.id = this.state.ninjas.length + 1;
+    //newNinja.id = Date.now();
+    newNinja.id = this.state.ninjas.length + 1;
     let newArray = [...this.state.ninjas, newNinja];
-    console.log(Date.now());
-    console.log(this.state.ninjas);
     this.setState(
       { ninjas : newArray }
-
-    );
-    
+    );   
   };
 
   deleteArrayElement = (id) => {

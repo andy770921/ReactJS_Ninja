@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Ninjas from './ninjas';
 import AddNinja from './AddNinja';
-//1234
+
 class App extends Component {
   state= {
     ninjas: [
